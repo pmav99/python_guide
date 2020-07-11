@@ -49,7 +49,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#why-linux" class="md-skip">
+        <a href="#dev-vs-prod" class="md-skip">
           Skip to content
         </a>
       
@@ -195,12 +195,69 @@
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Why Linux?
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
     
     <a href="./" title="Why Linux?" class="md-nav__link md-nav__link--active">
       Why Linux?
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dev-vs-prod" class="md-nav__link">
+    dev vs prod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-linux" class="md-nav__link">
+    Why Linux?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-not-mac" class="md-nav__link">
+    Why not Mac?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-not-windows" class="md-nav__link">
+    Why not windows?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-about-vms-and-wsl" class="md-nav__link">
+    How about VMs and WSL?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -314,8 +371,51 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dev-vs-prod" class="md-nav__link">
+    dev vs prod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-linux" class="md-nav__link">
+    Why Linux?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-not-mac" class="md-nav__link">
+    Why not Mac?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-not-windows" class="md-nav__link">
+    Why not windows?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-about-vms-and-wsl" class="md-nav__link">
+    How about VMs and WSL?
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -331,19 +431,103 @@
                   
                 
                 
-                <h1 id="why-linux">Why linux?<a class="headerlink" href="#why-linux" title="Permanent link">&para;</a></h1>
+                  <h1>Why Linux?</h1>
+                
+                <p>The choice of the operating system is for sure a controversial topic.  Among other things it is
+a question of aeshetics, specific needs and it often boils down just to personal preference.</p>
+<p>Nevertheless, I am arguing that when it comes to Python there usually is enough justification to
+choose Linux over other OSes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For sure, any modern operating system <strong>can</strong> server your needs. The question what is the <strong>best</strong>
+way to serve your (programming) needs.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In this guide I am only describing what works for me. You should choose the OS that is serving
+<strong>your</strong> needs in the best possible way.</p>
+</div>
+<h2 id="dev-vs-prod"><code>dev</code> vs <code>prod</code><a class="headerlink" href="#dev-vs-prod" title="Permanent link">&para;</a></h2>
 <p>An important distinction is between:</p>
 <ul>
 <li>the development environment (i.e. where you <em>write</em> the code)</li>
 <li>the production environment (i.e. where you <em>run</em> the code)</li>
 </ul>
-<p>In order to make debugging easier,
-you should strive to make the development environment
-as similar as possible to the production environment</p>
+<p>In order to make debugging easier, you should strive to make the development environment as similar
+as possible to the production environment.</p>
+<h2 id="why-linux">Why Linux?<a class="headerlink" href="#why-linux" title="Permanent link">&para;</a></h2>
+<p>As far as I am concerned, I consider myself I professional. When it comes to my work I want to be
+using the best tools I can, no questions asked.</p>
+<p>Just to give you a few examples:</p>
+<ul>
+<li>
+<p>There is a great deal of unix tools that make development so much easier
+  and which are not available on Windows. Some of them are available on Mac OS, but not all; see
+  the next point.</p>
+</li>
+<li>
+<p>Not having <strong>native</strong> docker is a huge deal breaker for me. It is not that it doesn't work on
+  other operating systems, but as soon as you move on from simple cases you will eventually
+  encounter a bug or some incompatibility and you will have to start jumping through hoops.</p>
+</li>
+<li>
 <p>Practically speaking, in science and web-development,
-the vast majority of the code that you will write will be executed on Linux
-(HPC, HTC, super-computers, web servers etc).</p>
-<p>So, use Linux!</p>
+  the vast majority of the code that you will write will be executed on Linux (HPC, HTC,
+  super-computers, web servers etc). Remember what we said about minimizing the differences between
+  <code>dev</code> and <code>prod</code>?</p>
+</li>
+<li>
+<p>There is some truth in (big) numbers. <a href="https://insights.stackoverflow.com/survey/2020#technology-developers-primary-operating-systems">1 in 4 developers use
+  Linux</a>
+  (regardless of Programming Language). When it comes to developers that identify themselves as
+  primarily Python devs, <a href="https://www.jetbrains.com/lp/python-developers-survey-2019/#DevelopmentTools">70% of them use
+  Linux</a> at some
+  capacity (main OS or cnotainers).</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Is the Linux world a fairy-tale? Nope! E.g. when it comes to multimedia it <strong>is</strong> a <em>living
+hell</em>. But here we are talking about development. Not about watching movies, using bluetooth
+devices etc.</p>
+</div>
+<h2 id="why-not-mac">Why not Mac?<a class="headerlink" href="#why-not-mac" title="Permanent link">&para;</a></h2>
+<p>It is unix based. It is very polished when it comes to integration with the
+native applications.  Many devs like Mac OS. Nevertheless, it is <em>like</em> Linux. It is <em>not</em> Linux.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I spend most of my working time in front of a console and linux is better at that.</p>
+</div>
+<h2 id="why-not-windows">Why not windows?<a class="headerlink" href="#why-not-windows" title="Permanent link">&para;</a></h2>
+<p>In the past, Python on Widows was really a second class citizen. Nowadays, with platforms like
+<a href="../app_conda/">conda</a> the situation is for sure better, nevertheless there are still restrictions.
+For example:</p>
+<ul>
+<li>
+<p>Eventually you will need something that is not available via a pre-compiled package and compiling
+C-Extentions on Windows is a major PITA.</p>
+</li>
+<li>
+<p>Dealing with multi-processing and multi-threading on windows is not what you call fun.</p>
+</li>
+<li>
+<p>There are a lot of subtle details that are different than Linux and usually that's where you will
+  run your code.</p>
+</li>
+</ul>
+<h2 id="how-about-vms-and-wsl">How about VMs and WSL?<a class="headerlink" href="#how-about-vms-and-wsl" title="Permanent link">&para;</a></h2>
+<p>There are two more options:</p>
+<ul>
+<li>Using Windows or Mac as the host operating system and using Linux in a Virtual Machine (VM)</li>
+<li>Using Windows Subsystem for Linux (WSL)</li>
+</ul>
+<p>For a short period, I did use a VM and
+<a href="https://www.youtube.com/channel/UC46xhU1EH7aywEgvA9syS3w">someone</a> whose opinion I value <a href="https://www.youtube.com/watch?v=8KdAqlESQJo">uses it
+extensively</a>. In the past (2000s) when computers were
+much weaker it was not really a viable choice.  Nowadays, it works just fine though.</p>
+<p>Personally I haven't used WSL. I know that it is being actively developed/improved. It is for sure
+a technology worth keeping our eyes upon.</p>
+<p>As of today, between the two, I think I would choose a VM.</p>
                 
               
               
