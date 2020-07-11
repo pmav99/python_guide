@@ -25,3 +25,7 @@ The requirements for *library* developers are different (more complex).
 > Note: Obviously, the distinction made here is quite high level.
 > You can have code that is both a library and an application,
 > you can have a library where only part of the APi is public while the rest of the code is not meant to be imported, etc
+
+The reason we make this distinction is that in an *application* you only care for your code to be
+running with a specific python version. On the other hand, in a *library* you must e.g. avoid
+pinning your requirements to specific versions, test with multiple python versions etc.

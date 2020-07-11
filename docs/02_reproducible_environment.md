@@ -1,6 +1,6 @@
 # Reproducible environments
 
-## Setup a **reproducible** environment
+## What is an environment?
 
 In the context we are discussing, *setting up the environment* means to make sure
 that all the *non-python* programs and libraries that you application needs are available.
@@ -10,6 +10,8 @@ it is your job to make sure that the program is there.
 
 A crucial detail is that the environment should be **reproducible**.
 And this affects both the *development* environment and the *production* environment
+
+## Setup a **reproducible** environment
 
 [Reproducible dev-environments](https://www.gitpod.io/blog/dev-env-as-code/) mean that in case:
 
