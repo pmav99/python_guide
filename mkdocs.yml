@@ -1,0 +1,25 @@
+site_name: Python Guide 2020
+
+theme:
+  name: material
+
+nav:
+  - 'Home': index.md
+  - 'Guide':
+      - 'Why Linux?': '01_why_linux.md'
+      - 'Reproducible environments': '02_reproducible_environment.md'
+      - 'Which Python version?': '03_python_versions.md'
+      - 'Developing Python Applications': '04_developing_python_applications.md'
+      - 'Installing Python Applications': '05_installing_python_applications.md'
+  - 'Appendix':
+      - 'conda': 'app_conda.md'
+      #- "Hold your jobs!": '03_hold_your_horses.md'
+      #- "Copy files over": '04_copy_files_over.md'
+
+
+markdown_extensions:
+  - 'admonition'
+  - 'codehilite'
+  - 'pymdownx.tilde'
+  - toc:
+      permalink: true
