@@ -48,6 +48,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#what-conda-really-is" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -281,9 +286,61 @@
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        conda
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="conda" class="md-nav__link md-nav__link--active">
       conda
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-conda-really-is" class="md-nav__link">
+    What conda really is
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-not-conda" class="md-nav__link">
+    Why not conda
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-conda-really-shines" class="md-nav__link">
+    When conda really shines?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-you-use-conda-on-linux" class="md-nav__link">
+    How can you use conda on linux?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -300,6 +357,57 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-conda-really-is" class="md-nav__link">
+    What conda really is
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-not-conda" class="md-nav__link">
+    Why not conda
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-conda-really-shines" class="md-nav__link">
+    When conda really shines?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-you-use-conda-on-linux" class="md-nav__link">
+    How can you use conda on linux?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -311,7 +419,95 @@
                 
                   <h1>conda</h1>
                 
-                
+                <h2 id="what-conda-really-is">What <code>conda</code> really is<a class="headerlink" href="#what-conda-really-is" title="Permanent link">&para;</a></h2>
+<p>Half the posts you will find online compare <code>conda</code> to <code>pip</code>.  IMHV this is really unfortunate.
+<code>conda</code> is not really comparable to <code>pip</code>.</p>
+<p><code>pip</code> <strong>only</strong> deals with <em>python</em> packages that are available through a <a href="https://pypi.org/">Python
+Package Index</a>.</p>
+<p><code>conda</code> on the other hand, is a <strong>generic package manager</strong>.  A more likely comparison is to compare
+it with <code>apt</code> or <code>yum</code>.  <code>conda</code> can install <strong>compiled binaries</strong>.  E.g. you can use conda to
+install <code>gcc</code>, or <code>openssh-client</code></p>
+<p>With <code>conda</code> you can create a <em>parallel</em> installation of the OS (not of the kernel, but of the
+userspace).  It practically allows you to have parallel "branches"  where you can install different
+versions of programs and libraries, and it gives you an easy way to switch between them.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This is a similar concept to python's virtualenvs but <code>conda</code> has a much bigger scope.</p>
+</div>
+<p>So you can have one branch/environment where you install for example GDAL version 2 and another
+where you install GDAL version 3.  Creating a similar setup without <code>conda</code>, is doable of course,
+but before docker became a thing, it was a pain.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Security-wise this is a nightmare though. <code>conda</code> gives you a <em>really</em> easy way to bypass root
+permissions...</p>
+</div>
+<h2 id="why-not-conda">Why not <code>conda</code><a class="headerlink" href="#why-not-conda" title="Permanent link">&para;</a></h2>
+<p>Personally, since I almost exclusively deal with Linux, I don't find much benefit in <code>conda</code>.</p>
+<ul>
+<li>it is <a href="https://github.com/QuantStack/mamba">notoriously</a> slow,</li>
+<li>it takes a huge amount of space,</li>
+<li>downloading random binaries from the internet is rather iffy from a security point of view,</li>
+<li>conda binaries are usually compiled with generic options so performance can be sub-optimal,</li>
+<li>etc, etc.</li>
+</ul>
+<p>All in all, IMHV <code>docker</code> + <code>apt</code> + <code>pip</code> is more than an adequate alternative, and I would even
+say, a superior alternative.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Of course <code>docker</code> has a learning curve, and I am talking here from the point of view of someone
+who has already paid the price, so you could say that I am biased...</p>
+</div>
+<h2 id="when-conda-really-shines">When <code>conda</code> really shines?<a class="headerlink" href="#when-conda-really-shines" title="Permanent link">&para;</a></h2>
+<p>IMHV <code>conda</code> makes a lot of sense on OSes that make it really difficult to compile things from
+source (i.e. Windows). In these environments installing a Python C-Extension to can be a real PITA.</p>
+<p>It also makes some sense on e.g. Mac OS if you want to avoid using homebrew etc. Installing binaries
+is easier after all.</p>
+<p>On Linux though you don't really have such problems.  Even if you need to compile something, it is
+usually relatively easy to do so (or at the very least, easier than the other OSes).</p>
+<h2 id="how-can-you-use-conda-on-linux">How can you use <code>conda</code> on linux?<a class="headerlink" href="#how-can-you-use-conda-on-linux" title="Permanent link">&para;</a></h2>
+<p>If you decide to use <code>conda</code> you should use it <em>to setup your</em> <strong>environment</strong>. For a more detailed
+explanation of what this entails, please check the <a href="../02_reproducible_environment/">relevant
+section</a>.  In a nutshell, in the context we are discussing, it means
+to make sure that all the packages and libraries that you application needs are available.</p>
+<p>To make this clear, it might make sense to include in the discussion <code>pip</code>.</p>
+<p><code>pip</code> is a package manager. Nevertheless, it <strong>only</strong> deals with Python packages.  You can't install
+non-python stuff with <code>pip</code>.  So for example you can't install <code>gcc</code> or <code>gdalinfo</code> with <code>pip</code>.  You
+can only install the <a href="https://pypi.org/project/GDAL/">python bindings for GDAL</a>, not
+<a href="https://gdal.org/">GDAL</a> proper.</p>
+<p>So, if your code is calling another program using e.g. <code>subprocess</code>, it is your job to make sure
+that the program is there. <code>pip</code> can't help you with that.</p>
+<p>That's where <code>conda</code> comes in.</p>
+<p>So you should use conda to:</p>
+<ul>
+<li>
+<p>create your <em>environment</em>,</p>
+</li>
+<li>
+<p>install the non-python dependencies there (e.g. <code>python=3.7.3</code>, <code>gdal=3.0.4</code> etc). These
+  dependencies should be pinned in your <code>environment.yaml</code>.</p>
+</li>
+<li>
+<p>and then create a virtualenv using the python you installed via <code>conda</code></p>
+</li>
+<li>
+<p>and manage your python dependencies using <code>poetry</code>. These dependencies should be pined in your
+  <code>pyproject.toml/poetry.lock</code></p>
+</li>
+</ul>
+<p>This way, you can continue to use the standard python ecosystem and have consistency across
+different environments and OSes.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you do decide to use <code>conda</code> though, my suggestion is to use <code>conda</code> all the way.  So if you
+need e.g. <code>GDAL</code> and <code>openssl</code> install both from <code>conda</code>, not one with <code>conda</code> and the other
+with <code>apt</code>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>REMEMBER: don't mix up packages from different package managers in your environment. This can
+only lead to trouble.</p>
+</div>
                 
               
               
