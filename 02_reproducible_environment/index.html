@@ -244,8 +244,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-a-reproducible-environment" class="md-nav__link">
-    Setup a reproducible environment
+  <a href="#reproducible-environments_1" class="md-nav__link">
+    Reproducible environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-a-reproducible-environment" class="md-nav__link">
+    Setting up a reproducible environment
   </a>
   
 </li>
@@ -373,8 +380,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-a-reproducible-environment" class="md-nav__link">
-    Setup a reproducible environment
+  <a href="#reproducible-environments_1" class="md-nav__link">
+    Reproducible environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-a-reproducible-environment" class="md-nav__link">
+    Setting up a reproducible environment
   </a>
   
 </li>
@@ -398,12 +412,25 @@
                 <h1 id="reproducible-environments">Reproducible environments<a class="headerlink" href="#reproducible-environments" title="Permanent link">&para;</a></h1>
 <h2 id="what-is-an-environment">What is an environment?<a class="headerlink" href="#what-is-an-environment" title="Permanent link">&para;</a></h2>
 <p>In the context we are discussing, <em>setting up the environment</em> means to make sure
-that all the <em>non-python</em> programs and libraries that you application needs are available.</p>
-<p>So, if your code is calling for example <code>gdalinfo</code> or <code>pdflatex</code> using <code>subprocess</code>,
-it is your job to make sure that the program is there.</p>
-<p>A crucial detail is that the environment should be <strong>reproducible</strong>.
-And this affects both the <em>development</em> environment and the <em>production</em> environment</p>
-<h2 id="setup-a-reproducible-environment">Setup a <strong>reproducible</strong> environment<a class="headerlink" href="#setup-a-reproducible-environment" title="Permanent link">&para;</a></h2>
+that all the <em>non-python</em> programs and libraries that your application needs are available.</p>
+<p>For example:</p>
+<ul>
+<li>
+<p>your code is calling a 3rd party program using <code>subprocess</code>.</p>
+</li>
+<li>
+<p>one of your python dependencies is
+  a "<a href="https://docs.python.org/3/extending/extending.html">C-extension</a>" and there is no
+  <a href="https://www.python.org/dev/peps/pep-0427/">wheel</a> for it. This means that in order to install it
+  you must compile it. In a nutshell, both <code>gcc</code> and the python headers must be available (you
+  install the latter by installing the <code>python-dev</code> package on debian/ubuntu).</p>
+</li>
+</ul>
+<p><em>Setting up the environment</em> means to make sure that whatever is required in order to start
+developing <em>is</em> available.</p>
+<h2 id="reproducible-environments_1"><strong>Reproducible</strong> environments<a class="headerlink" href="#reproducible-environments_1" title="Permanent link">&para;</a></h2>
+<p>A crucial detail is that the environment should be <strong>reproducible</strong>.  This is something that affects
+both the <em>development</em> environment and the <em>production</em> environment</p>
 <p><a href="https://www.gitpod.io/blog/dev-env-as-code/">Reproducible dev-environments</a> mean that in case:</p>
 <ul>
 <li>your laptop breaks down, you can <a href="https://dilbert.com/strip/2017-01-02">easily</a> continue your work on a different one</li>
@@ -411,17 +438,42 @@ And this affects both the <em>development</em> environment and the <em>productio
 <li>you stop working on the project, you can easily hand-over to someone else.</li>
 </ul>
 <p>Reproducible prod-environments are <em>essential</em> for keeping your sanity...</p>
-<p>There are multiple ways you can handle the creation of reproducible environments.
-I will not cover them in detail here, but reasonable choices are:</p>
+<h2 id="setting-up-a-reproducible-environment">Setting up a <strong>reproducible</strong> environment<a class="headerlink" href="#setting-up-a-reproducible-environment" title="Permanent link">&para;</a></h2>
+<p>To what extends you will go to create reproducible environments depends, among other things, on:</p>
 <ul>
-<li><a href="https://www.docker.com/"><code>docker</code></a>  which is probably the most flexible, but it also has a relatively steep learning curve.
-   Nevertheless, learning at least the basics is really worth it.</li>
-<li><a href="https://www.ansible.com/"><code>ansible</code></a> which is useful when you work with VPS.</li>
-<li><a href="https://docs.conda.io/en/latest/miniconda.html"><code>conda</code></a> which is the easiest to get started with, but it cannot really help you with</li>
+<li>the complexity of the project</li>
+<li>the importance of the project</li>
+<li>the number of devs that work on it</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For "run-once-and-throw-away" scripts you obviously do nothing.</p>
+</div>
+<p>For really simple projects and projects that only you work on, it is usually enough to just document
+any special needs in the readme. I.e. it usually not worth it to setup an automatic way to reproduce
+the environment.</p>
+<p>For more complex stuff though, there are multiple ways with which you can handle the
+"reproducibility" of the environment.  I will not cover them in detail here, but reasonable choices are:</p>
+<ul>
+<li>
+<p><a href="https://www.docker.com/"><code>docker</code></a>  which is probably the most flexible, but it also has a relatively steep learning curve.
+   Nevertheless, learning at least the basics is really worth it.</p>
+</li>
+<li>
+<p><a href="https://www.ansible.com/"><code>ansible</code></a> which is useful when you work with VPS.</p>
+</li>
+<li>
+<p><a href="https://docs.conda.io/en/latest/miniconda.html"><code>conda</code></a> which, especially among scientists, is
+  a popular choice but it IMHV has <a href="../app_conda/">several shortcomings</a>. Among other things, often is not even an
+  option for running things on production (e.g. if you run your code on a HPC/HTC cluster conda
+  might be forbidden as it can be a security nightmare for the sys-admins).</p>
+</li>
 </ul>
 <blockquote>
-<p>Note: In production, you often use a combination of the above.
-E.g. you create a VPS, you use <code>ansible</code> or <a href="https://www.terraform.io/"><code>terraform</code></a> in order to set it up, "harden" it and install plain <code>docker</code> or <a href="https://kubernetes.io/"><code>kubernetes</code></a> which is what you actually use to run your code.</p>
+<p>Note: In production, you often use a combination of the above.  E.g. you create a VPS, you use
+<code>ansible</code> or <a href="https://www.terraform.io/"><code>terraform</code></a> in order to set it up, "harden" it and
+install plain <code>docker</code> or <a href="https://kubernetes.io/"><code>kubernetes</code></a> which is what you actually use to
+run your code.</p>
 </blockquote>
                 
               

@@ -417,6 +417,9 @@
 You can have code that is both a library and an application,
 you can have a library where only part of the APi is public while the rest of the code is not meant to be imported, etc</p>
 </blockquote>
+<p>The reason we make this distinction is that in an <em>application</em> you only care for your code to be
+running with a specific python version. On the other hand, in a <em>library</em> you must e.g. avoid
+pinning your requirements to specific versions, test with multiple python versions etc.</p>
                 
               
               
